@@ -19,10 +19,14 @@
 ![Home Page](joyliday_port/img_1.png)
 
 ### 🔹 สมัครสมาชิก
-![Register](joyliday_port/img_2.png)
+![Register Page](joyliday_port/img_2.png)
 
-### 🔹 รายชื่อพนักงาน
-![Employee List](screenshots/employees.png)
+### 🔹 เข้าสู่ระบบ
+![Login Page](joyliday_port/img_3.png)
+
+### 🔹 เข้าสู่ระบบ
+![Login Page](joyliday_port/img_3.png)
+
 
 ## 🚀 วิธีรันโปรเจกต์
 ```sh
