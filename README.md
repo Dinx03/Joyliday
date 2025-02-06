@@ -30,7 +30,7 @@
 ### 🔹 รายชื่อพนักงาน (Employees list)
 ![Login Page](joyliday_port/img_5.png)
 
-### 🔹 เข้าสู่ระบบ (Reward list)
+### 🔹 ของรางวัล (Reward list)
 ![Login Page](joyliday_port/img_6.png)
 
 ### 🔹 ฐานข้อมูล (Database)
