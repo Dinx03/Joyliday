@@ -16,7 +16,7 @@
 
 ## 📸 Screenshots
 ### 🔹 หน้าแรก
-![Home Page](screenshots/home.png)
+![Home Page](joyliday_port/img_1.png)
 
 ### 🔹 เพิ่มพนักงาน
 ![Add Employee](screenshots/add_employee.png)
