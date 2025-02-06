@@ -15,18 +15,20 @@
 👉 ดูวิดีโอได้ที่ [Google Drive](https://drive.google.com/file/d/1kcrTKREejmyg2Fo946VTjcgNLksZBA-P/view)
 
 ## 📸 Screenshots
-### 🔹 หน้าแรก
+### 🔹 หน้าแรก (Home Page)
 ![Home Page](joyliday_port/img_1.png)
 
-### 🔹 สมัครสมาชิก
+### 🔹 สมัครสมาชิก (Register Page)
 ![Register Page](joyliday_port/img_2.png)
 
-### 🔹 เข้าสู่ระบบ
+### 🔹 เข้าสู่ระบบ (Login Page)
 ![Login Page](joyliday_port/img_3.png)
 
-### 🔹 เข้าสู่ระบบ
+### 🔹 เข้าสู่ระบบ (Login Page)
 ![Login Page](joyliday_port/img_3.png)
 
+### 🔹 เข้าสู่ระบบ (Login Page)
+![Login Page](joyliday_port/img_3.png)
 
 ## 🚀 วิธีรันโปรเจกต์
 ```sh
