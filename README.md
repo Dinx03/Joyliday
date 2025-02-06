@@ -25,15 +25,12 @@
 ![Login Page](joyliday_port/img_3.png)
 
 ### 🔹 เข้าสู่ระบบ (Login Page)
-![Login Page](joyliday_port/img_3.png)
-
-### 🔹 เข้าสู่ระบบ (Login Page)
 ![Login Page](joyliday_port/img_4.png)
 
-### 🔹 เข้าสู่ระบบ (Login Page)
+### 🔹 รายชื่อพนักงาน (Employees list)
 ![Login Page](joyliday_port/img_5.png)
 
-### 🔹 เข้าสู่ระบบ (Login Page)
+### 🔹 เข้าสู่ระบบ (Reward list)
 ![Login Page](joyliday_port/img_6.png)
 
 ### 🔹 ฐานข้อมูล (Database)
