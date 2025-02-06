@@ -1,0 +1,157 @@
+USE Joyliday;
+-- 1. Department Table
+CREATE TABLE Department (
+    Department_id INT PRIMARY KEY,
+    Department_name VARCHAR(255) NOT NULL,
+    Location VARCHAR(255)
+);
+
+-- 2. Employee Table
+CREATE TABLE Employee (
+    Employee_id INT PRIMARY KEY,
+    Employee_name VARCHAR(255) NOT NULL,
+    Department_id INT,
+    FOREIGN KEY (Department_id) REFERENCES Department(Department_id)
+);
+
+-- 3. Customer Table
+CREATE TABLE Customer (
+    Customer_id INT PRIMARY KEY,
+    Customer_name VARCHAR(255) NOT NULL,
+    Customer_phone VARCHAR(20),
+    Email VARCHAR(255)
+);
+
+-- 4. Membership Table
+CREATE TABLE Membership (
+    Membership_id INT PRIMARY KEY,
+    Customer_id INT,
+    Balance INT,
+    FOREIGN KEY (Customer_id) REFERENCES Customer(Customer_id)
+);
+
+-- 5. CustomerService Table
+CREATE TABLE CustomerService (
+    Customer_id INT,
+    Employee_id INT,
+    ServiceDate DATE,
+    PRIMARY KEY (Customer_id, Employee_id, ServiceDate),
+    FOREIGN KEY (Customer_id) REFERENCES Customer(Customer_id),
+    FOREIGN KEY (Employee_id) REFERENCES Employee(Employee_id)
+);
+
+-- 6. Reward Table
+CREATE TABLE Reward (
+    Reward_id INT PRIMARY KEY,
+    Reward_name VARCHAR(255),
+    Points_required INT
+);
+
+-- 7. CustomerReward Table
+CREATE TABLE CustomerReward (
+    Customer_id INT,
+    Reward_id INT,
+    RedeemDate DATE,
+    PointsUsed INT,
+    Quantity INT,
+    Status VARCHAR(50),
+    ExpirationDate DATE,
+    PRIMARY KEY (Customer_id, Reward_id),
+    FOREIGN KEY (Customer_id) REFERENCES Customer(Customer_id),
+    FOREIGN KEY (Reward_id) REFERENCES Reward(Reward_id)
+);
+
+-- 8. Stamp Table
+CREATE TABLE Stamp (
+    Stamp_id INT PRIMARY KEY,
+    Customer_id INT,
+    Count INT,
+    FOREIGN KEY (Customer_id) REFERENCES Customer(Customer_id)
+);
+
+-- 9. StampHistory Table
+CREATE TABLE StampHistory (
+    Stamp_id INT,
+    Customer_id INT,
+    DateReceived DATE,
+    PRIMARY KEY (Stamp_id, Customer_id, DateReceived),
+    FOREIGN KEY (Stamp_id) REFERENCES Stamp(Stamp_id),
+    FOREIGN KEY (Customer_id) REFERENCES Customer(Customer_id)
+);
+
+SHOW TABLES;
+-- ใส่ข้อมูลในตาราง Department
+INSERT INTO Department (department_id, department_name, location)
+VALUES 
+(1, 'Top-Up', 'ชั้น 1'),            -- แผนกเติมเงิน
+(2, 'Customer Service', 'ชั้น 2'),  -- แผนกดูแลความเรียบร้อย
+(3, 'Cleaning', 'ชั้น 1'),           -- แผนกดูแลความสะอาด
+(4, 'Reward Redemption', 'ชั้น 1');  -- แผนกแลกของรางวัล
+
+UPDATE Department 
+SET department_name = 'Top-Up', location = 'The Mall Life Store'
+WHERE department_id = 1;
+
+UPDATE Department 
+SET department_name = 'Customer Service', location = 'The Mall Life Store'
+WHERE department_id = 2;
+
+UPDATE Department 
+SET department_name = 'Cleaning', location = 'The Mall Life Store'
+WHERE department_id = 3;
+
+UPDATE Department 
+SET department_name = 'Reward Redemption', location = 'The Mall Life Store'
+WHERE department_id = 4;
+
+-- ใส่ข้อมูลในตาราง Customer
+INSERT INTO Customer (customer_id, customer_name, customer_phone, email)
+VALUES 
+(1, 'John Doe', '123-456-7890', 'john@example.com'),
+(2, 'Jane Smith', '098-765-4321', 'jane@example.com'),
+(3, 'Alice Johnson', '555-555-5555', 'alice@example.com'),
+(4, 'Bob Brown', '444-444-4444', 'bob@example.com');
+
+-- ใส่ข้อมูลในตาราง Employee
+INSERT INTO Employee (employee_id, employee_name, department_id)
+VALUES 
+(1, 'Robert Brown', 1),  -- แผนกเติมเงิน
+(2, 'Emily Davis', 1),   -- แผนกเติมเงิน
+(3, 'Michael White', 2), -- แผนกดูแลความเรียบร้อย
+(4, 'Sarah Black', 2),   -- แผนกดูแลความเรียบร้อย
+(5, 'Jessica Green', 3), -- แผนกดูแลความสะอาด
+(6, 'Tom Harris', 4),    -- แผนกแลกของรางวัล
+(7, 'Kate Wilson', 4);    -- แผนกแลกของรางวัล
+
+-- ใส่ข้อมูลในตาราง Membership
+INSERT INTO Membership (membership_id, customer_id, balance)
+VALUES 
+(1, 1, 150),
+(2, 2, 200),
+(3, 3, 100),
+(4, 4, 50);
+
+-- ใส่ข้อมูลในตาราง Stamp
+INSERT INTO Stamp (stamp_id, customer_id, count)
+VALUES 
+(1, 1, 5),
+(2, 2, 10),
+(3, 3, 3),
+(4, 4, 0);
+
+-- ใส่ข้อมูลในตาราง Reward
+INSERT INTO Reward (reward_id, reward_name, points_required)
+VALUES 
+(1, 'Teddy Bear - Small', 50),
+(2, 'Teddy Bear - Medium', 100),
+(3, 'Teddy Bear - Large', 150),
+(4, 'Doll - Princess', 200),
+(5, 'Doll - Unicorn', 250),
+(6, 'Doll - Superhero', 300),
+(7, 'Stuffed Dog', 150),
+(8, 'Stuffed Cat', 150),
+(9, 'Stuffed Rabbit', 200),
+(10, 'Stuffed Elephant', 250);
+
+SHOW TABLES;
+SELECT * FROM Reward;

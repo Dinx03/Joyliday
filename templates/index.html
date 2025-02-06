@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Joyliday Center</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif; /* ฟอนต์ Roboto */
+            background: linear-gradient(to bottom right, #ffcccb, #ff69b4); /* ไล่สีพื้นหลัง */
+            color: #333; /* สีข้อความ */
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* เต็มความสูงของหน้าจอ */
+            margin: 0;
+            padding: 20px; /* เพิ่ม padding เล็กน้อย */
+            box-shadow: inset 0 0 30px rgba(255, 255, 255, 0.7); /* เงาภายใน */
+        }
+        h1 {
+            font-family: 'Great Vibes', cursive; /* ใช้ฟอนต์สไตล์อาร์ต */
+            font-size: 4em; /* ขนาดตัวอักษรใหญ่ */
+            margin-bottom: 20px;
+            color: #fff; /* สีขาวสำหรับหัวเรื่อง */
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); /* เงาข้อความ */
+        }
+        p {
+            margin: 20px 0;
+            font-size: 1.2em; /* ขนาดตัวอักษรในย่อหน้า */
+            color: #fff; /* สีขาว */
+        }
+        a {
+            display: inline-block;
+            margin: 10px; /* ระยะห่างระหว่างปุ่ม */
+            padding: 15px 30px; /* ขนาดปุ่ม */
+            font-size: 1.1em;
+            color: #ffffff; /* สีข้อความปุ่ม */
+            background-color: #ff69b4; /* สีชมพู */
+            border-radius: 25px; /* มุมมนของปุ่ม */
+            text-decoration: none; /* ไม่ให้ขีดเส้นใต้ */
+            transition: background-color 0.3s, transform 0.2s; /* เอฟเฟกต์เมื่อ hover */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* เงา */
+        }
+        a:hover {
+            background-color: #ff85c2; /* สีชมพูอ่อนเมื่อ hover */
+            transform: translateY(-4px); /* ยกปุ่มขึ้นเล็กน้อย */
+        }
+        footer {
+            margin-top: 30px; /* เว้นระยะห่างด้านบน */
+            font-size: 0.9em; /* ขนาดตัวอักษร */
+            color: #fff; /* สีข้อความใน footer */
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Joyliday Center</h1>
+    <p>
+        <a href="{{ url_for('register') }}">Register</a>
+        <a href="{{ url_for('login') }}">Login</a>
+        <a href="{{ url_for('employees') }}">View Employees</a>
+        <a href="{{ url_for('rewards') }}">View Rewards</a>
+    </p>
+    <footer>
+        <p>&copy; 2024 Joyliday Center. All rights reserved.</p>
+    </footer>
+</body>
+</html>

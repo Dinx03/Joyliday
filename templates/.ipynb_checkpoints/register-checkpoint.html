@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- รองรับการแสดงผลบนมือถือ -->
+    <title>Register</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600&family=Great+Vibes&display=swap" rel="stylesheet"> <!-- ฟอนต์ที่สอดคล้อง -->
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif; /* ฟอนต์มาตรฐาน */
+            background: linear-gradient(to bottom right, #ffcccb, #ff69b4); /* ไล่สีพื้นหลัง */
+            color: #333; /* สีข้อความ */
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-shadow: inset 0 0 30px rgba(255, 255, 255, 0.7); /* เงาภายใน */
+        }
+        h1 {
+            font-family: 'Great Vibes', cursive; /* ฟอนต์สำหรับหัวเรื่อง */
+            font-size: 3em; /* ขนาดตัวอักษรใหญ่ */
+            margin-bottom: 20px;
+            color: #fff; /* สีขาว */
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); /* เงาของข้อความ */
+        }
+        form {
+            background: rgba(255, 255, 255, 0.8); /* สีพื้นหลังของฟอร์ม */
+            padding: 20px; /* เพิ่ม padding ภายในฟอร์ม */
+            border-radius: 10px; /* มุมมน */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* เงา */
+            display: inline-block; /* ให้ฟอร์มอยู่กลาง */
+            margin-bottom: 20px;
+            transition: transform 0.2s; /* เอฟเฟกต์การเคลื่อนที่ */
+        }
+        form:hover {
+            transform: translateY(-2px); /* ยกฟอร์มขึ้นเมื่อ hover */
+        }
+        label {
+            display: block; /* ให้ label อยู่ในบล็อก */
+            margin-top: 10px;
+            text-align: left;
+            font-weight: bold;
+            color: #ff69b4; /* สีชมพู */
+        }
+        input[type="text"],
+        input[type="email"] {
+            width: 100%; /* ทำให้ช่องกรอกข้อมูลกว้างเต็มฟอร์ม */
+            padding: 10px; /* เพิ่ม padding ภายในช่องกรอกข้อมูล */
+            margin-top: 5px; /* ระยะห่างระหว่าง label และ input */
+            border: 1px solid #ddd; /* เส้นขอบ */
+            border-radius: 8px; /* มุมมน */
+            box-sizing: border-box;
+            transition: border-color 0.3s;
+        }
+        input[type="text"]:focus,
+        input[type="email"]:focus {
+            border-color: #ff69b4;
+            outline: none;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            border-radius: 25px; /* ปรับขอบมนเพิ่มความนุ่มนวล */
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* เงาของปุ่ม */
+        }
+        button:hover {
+            background-color: #ff85c2;
+            transform: translateY(-4px); /* ยกปุ่มขึ้นเมื่อ hover */
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            color: #fff; /* สีของลิงก์ */
+            background-color: #ff85c2; /* พื้นหลังของลิงก์ */
+            border-radius: 25px; /* ขอบมน */
+            text-decoration: none;
+            transition: background-color 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* เพิ่มเงาให้ลิงก์ */
+        }
+        a:hover {
+            background-color: #ffcccb;
+        }
+    </style>
+</head>
+<body>
+    <h1>Register</h1>
+    <form action="{{ url_for('register') }}" method="POST">
+        <label for="customer_name">Name:</label>
+        <input type="text" id="customer_name" name="customer_name" required>
+        
+        <label for="customer_phone">Phone:</label>
+        <input type="text" id="customer_phone" name="customer_phone" required>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        
+        <button type="submit">Register</button>
+    </form>
+
+    <a href="/">Back to Home</a> <!-- ปุ่มกลับไปยังหน้าแรก -->
+</body>
+</html>

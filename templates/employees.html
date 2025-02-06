@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employees</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif; /* ฟอนต์ Roboto */
+            background: linear-gradient(to bottom right, #ffdde1, #ff77aa); /* ไล่สีพื้นหลังนุ่มนวล */
+            color: #333; /* สีข้อความ */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh; /* ทำให้สูงเต็มหน้าจอ */
+            margin: 0;
+        }
+
+        h1 {
+            font-family: 'Great Vibes', cursive; /* ฟอนต์สไตล์อาร์ต */
+            font-size: 3em; /* ขนาดตัวอักษรใหญ่ */
+            margin-bottom: 30px; /* เว้นระยะห่างด้านล่าง */
+            color: #fff; /* สีขาวสำหรับหัวเรื่อง */
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); /* เงาข้อความ */
+        }
+
+        table {
+            width: 90%; /* ความกว้างของตาราง */
+            max-width: 800px; /* ความกว้างสูงสุดของตาราง */
+            margin: 0 auto; /* จัดกลางตาราง */
+            border-collapse: collapse; /* รวมเส้นขอบ */
+            background-color: #fff; /* สีพื้นหลังของตาราง */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* เงาของตาราง */
+            border-radius: 10px; /* มุมมน */
+            overflow: hidden; /* ซ่อนเส้นขอบที่เกินออกไป */
+        }
+
+        th, td {
+            padding: 15px; /* เว้นระยะห่างภายในเซลล์ */
+            text-align: center; /* จัดข้อความให้กลาง */
+            border-bottom: 1px solid #f1f1f1; /* เส้นขอบด้านล่างเซลล์ */
+        }
+
+        th {
+            background-color: #ff77aa; /* สีพื้นหลังหัวตาราง */
+            color: #fff; /* สีข้อความในหัวตาราง */
+            font-weight: 600; /* น้ำหนักตัวอักษร */
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9; /* สีพื้นหลังสำหรับแถวที่เป็นคู่ */
+        }
+
+        tr:hover {
+            background-color: #ffe6f2; /* สีพื้นหลังเมื่อ hover */
+        }
+
+        a {
+            margin-top: 30px; /* เว้นระยะห่างด้านบน */
+            padding: 12px 24px; /* ขนาดปุ่ม */
+            font-size: 1.2em; /* ขนาดตัวอักษรปุ่ม */
+            color: #fff; /* สีข้อความในปุ่ม */
+            background-color: #ff77aa; /* สีพื้นหลังของปุ่ม */
+            text-decoration: none; /* ไม่ให้ขีดเส้นใต้ */
+            border-radius: 8px; /* มุมมนของปุ่ม */
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* เงาของปุ่ม */
+            transition: background-color 0.3s; /* เอฟเฟกต์การเปลี่ยนสี */
+        }
+
+        a:hover {
+            background-color: #ff88bb; /* สีพื้นหลังเมื่อ hover */
+        }
+    </style>
+</head>
+<body>
+    <h1>Employee List</h1>
+    <table>
+        <tr>
+            <th>Employee ID</th>
+            <th>Employee Name</th>
+            <th>Department ID</th>
+            <th>Department Name</th>
+            <th>Username</th>
+        </tr>
+        {% for employee in employees %}
+        <tr>
+            <td>{{ employee.Employee_id }}</td>
+            <td>{{ employee.Employee_name }}</td>
+            <td>{{ employee.Department_id }}</td>
+            <td>{{ employee.Department_name }}</td>
+            <td>{{ employee.Username }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{{ url_for('index') }}">Back to Home</a> <!-- ปุ่มกลับไปยังหน้าแรก -->
+</body>
+</html>

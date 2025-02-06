@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(to bottom right, #ffdde1, #ff77aa);
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            color: #fff;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+        }
+
+        .profile-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+        }
+
+        .profile-picture {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #ff88bb;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            margin-top: -70px;
+            background-color: #fff;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin: 15px 0;
+            color: #444;
+        }
+
+        strong {
+            color: #ff77aa; /* สีที่ต่างจากข้อความทั่วไป */
+        }
+
+        .logout-button {
+            margin-top: 30px;
+            padding: 12px 24px;
+            font-size: 1.2em;
+            color: #fff;
+            background-color: #ff77aa;
+            text-decoration: none;
+            border-radius: 8px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s;
+        }
+
+        .logout-button:hover {
+            background-color: #ff88bb;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <h1>User Profile</h1>
+    
+    <div class="profile-container">
+        <!-- Placeholder for Profile Picture -->
+        <img src="{{ customer.profile_picture_url }}" alt="Profile Picture" class="profile-picture" onerror="this.src='https://via.placeholder.com/120';">
+        
+        {% if customer %}
+            <p><strong>Name:</strong> {{ customer.Customer_name }}</p>
+            <p><strong>Phone:</strong> {{ customer.Customer_phone }}</p>
+            <p><strong>Email:</strong> {{ customer.Email }}</p>
+        {% else %}
+            <p>No user data available.</p>
+        {% endif %}
+        
+        <a class="logout-button" href="{{ url_for('logout') }}">Logout</a>
+    </div>
+</body>
+</html>
