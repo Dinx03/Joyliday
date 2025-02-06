@@ -12,7 +12,7 @@
 ## 🎥 Demo Video
 [![Watch the video]
 
-👉 ดูวิดีโอได้ที่ [Google Drive]([https://drive.google.com/YOUR_VIDEO_LINK](https://drive.google.com/file/d/1kcrTKREejmyg2Fo946VTjcgNLksZBA-P/view?usp=sharing))
+👉 ดูวิดีโอได้ที่ [Google Drive](https://drive.google.com/file/d/1kcrTKREejmyg2Fo946VTjcgNLksZBA-P/view)
 
 ## 📸 Screenshots
 ### 🔹 หน้าแรก
