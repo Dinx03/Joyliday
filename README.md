@@ -18,8 +18,8 @@
 ### 🔹 หน้าแรก
 ![Home Page](joyliday_port/img_1.png)
 
-### 🔹 เพิ่มพนักงาน
-![Add Employee](screenshots/add_employee.png)
+### 🔹 สมัครสมาชิก
+![Register](joyliday_port/img_2.png)
 
 ### 🔹 รายชื่อพนักงาน
 ![Employee List](screenshots/employees.png)
